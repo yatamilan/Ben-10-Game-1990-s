@@ -1,0 +1,134 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Game Area */
+.game-area {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('src/back.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Character Styling */
+
+/* Player (Ben) */
+.player {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-image: url('src/ben.png'); /* Replace with the path to Ben's image */
+    background-size: cover;
+}
+
+/* Omnitrix Symbol */
+.omnitrix-symbol {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('src/Omni.png'); /* Replace with the path to Omnitrix image */
+    background-size: cover;
+}
+
+/* Villains */
+.villain {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    animation: fall 3s linear infinite; /* Add falling animation */
+}
+
+/* Unique styling for each villain */
+.villain1 {
+    background-image: url('src/v1.webp'); /* Replace with villain 1 image */
+}
+
+.villain2 {
+    background-image: url('src/v3.png'); /* Replace with villain 2 image */
+}
+
+.villain3 {
+    background-image: url('src/v2.png'); /* Replace with villain 3 image */
+}
+
+/* Keyframes for Villain Falling */
+@keyframes fall {
+    0% {
+        top: -100px; /* Start from above the screen */
+    }
+    100% {
+        top: 100vh; /* End at the bottom of the screen */
+    }
+}
+
+/* Health and Energy Bars */
+.status-bars {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#health-bar,
+#energy-bar {
+    width: 100px;
+    height: 10px;
+}
+
+#health-bar {
+    appearance: none;
+    background-color: red; /* Health bar color */
+}
+
+#energy-bar {
+    appearance: none;
+    background-color: green; /* Energy bar color */
+}
+
+/* Score Display */
+.score-display {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Play Button */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 24px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+}
+
+.play-button:focus {
+    outline: none;
+}
